@@ -1,5 +1,5 @@
-#ifndef CACULATOR2_PARSER_H
-#define CACULATOR2_PARSER_H
+#ifndef CACULATOR_PARSER_H
+#define CACULATOR_PARSER_H
 
 namespace Parser {
     double prim(bool);
@@ -7,4 +7,4 @@ namespace Parser {
     double expr(bool);
 }
 
-#endif //CACULATOR2_PARSER_H
+#endif //CACULATOR_PARSER_H

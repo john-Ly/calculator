@@ -1,9 +1,5 @@
-//
-// Created by john on 2018/5/10.
-//
-
-#ifndef CACULATOR2_ERROR_H
-#define CACULATOR2_ERROR_H
+#ifndef CACULATOR_ERROR_H
+#define CACULATOR_ERROR_H
 
 
 #include<string>
@@ -13,4 +9,4 @@ namespace Error {
 }
 
 
-#endif //CACULATOR2_ERROR_H
+#endif //CACULATOR_ERROR_H

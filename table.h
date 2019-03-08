@@ -1,9 +1,5 @@
-//
-// Created by john on 2018/5/10.
-//
-
-#ifndef CACULATOR2_TABLE_H
-#define CACULATOR2_TABLE_H
+#ifndef CACULATOR_TABLE_H
+#define CACULATOR_TABLE_H
 #include <map>
 #include <string>
 
@@ -12,4 +8,4 @@ namespace Table {
 }
 
 
-#endif //CACULATOR2_TABLE_H
+#endif //CACULATOR_TABLE_H

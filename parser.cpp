@@ -73,4 +73,4 @@ namespace Parser {
             }
         }
     }
-}
+} // namespace parser

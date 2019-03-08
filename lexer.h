@@ -1,15 +1,11 @@
-//
-// Created by john on 2018/5/10.
-//
-
 // For input, the parser uses a Token_stream that encapsulates the reading of characters and their composition into Tokens.
 // That is, a Token_stream ‘‘tokenizes’’: it turns streams of characters, such as 123.45 , into Tokens.
 // A Token is a {kind-of-token,value} pair, such as {number,123.45} , where the 123.45 has been turned into a floating point value.
 // The main parts of the parser need only to know the name of the Token_stream , ts , and how to get Token s from it.
 // In addition to providing tokenizing, the Token_stream hides the actual source of the characters. We’ll see that they can come directly from a user typing to cin , from a program command line, or from any other input stream.
 
-#ifndef CACULATOR2_LEXER_H
-#define CACULATOR2_LEXER_H
+#ifndef CACULATOR_LEXER_H
+#define CACULATOR_LEXER_H
 
 #include<string>
 #include<iostream>
@@ -31,7 +27,17 @@ namespace Lexer {
         double number_value;
     };
 
-    class Token_stream {
+    // reference semantics
+    class noncopyable {
+    protected:
+        noncopyable() = default;
+        ~noncopyable() = default;
+    private:
+        noncopyable( const noncopyable& ) = delete;
+        const noncopyable& operator=( const noncopyable& ) = delete;
+    };
+
+    class Token_stream : noncopyable {
     public:
         // @TODO single-argument constructors must be marked explicit to avoid unintentional implicit conversions
         explicit Token_stream(istream& s) : ip{&s}, owns{false}, ct{Kind::end} { }
@@ -56,4 +62,4 @@ namespace Lexer {
     extern Token_stream ts;
 }
 
-#endif //CACULATOR2_LEXER_H
+#endif //CACULATOR_LEXER_H
