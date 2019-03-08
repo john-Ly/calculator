@@ -1,0 +1,31 @@
+program:
+    end
+    expr_list end                        // end is end-of-input
+
+expr_list:
+    expression print
+    expression print expr_list           // print is newline or semicolon
+
+expression:
+    expression + term
+    expression − term
+    term
+
+term:
+    term / primary
+    term ∗ primary
+    primary
+
+primary:
+    number                               // number is a floating-point literal
+    name                                 // name is an identifier
+    name = expression
+    − primary
+    ( expression )
+
+
+NOTE:
+1. recursive descent:
+2. Terminal symbols (for example, end , number , + , and − ) are recognized by a lexical analyzer
+   Nonterminal symbols are recognized by the syntax analyzer functions, expr() , term() , and prim() .
+3. left associative
