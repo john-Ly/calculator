@@ -26,6 +26,7 @@ namespace Driver {
             if (ts.current().kind == Kind::print) continue;
 
             std::cout << Parser::expr(false) << '\n';
+            // print each expression in thr forever loop
         }
     }
 }

@@ -24,6 +24,7 @@ namespace Parser {
                 ts.get();
                 return v;
             } case Kind::name: {
+                // & means sync/share the value between table and v
                 double& v = table[ts.current().string_value];  // find the corresponding
                 if (ts.get().kind == Kind::assign) v = expr(true);  // '=' seen: assignment
                 return v;
